@@ -63,7 +63,7 @@ library
     scientific >= 0.3.0.0,
     time >= 1.5,
     transformers,
-  if !impl(ghcjs) && !arch(javascript) && !flag(no-double-conversion)
+  if !impl(ghcjs) && !(arch(javascript) || arch(wasm32)) && !flag(no-double-conversion)
     build-depends:
       double-conversion ^>= 2.0.2.0,
   exposed-modules:
